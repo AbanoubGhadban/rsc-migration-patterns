@@ -1,0 +1,7 @@
+<h1>Pattern 2: The Donut Pattern (Children as Props)</h1>
+<p>
+  The Modal is a <strong>Client Component</strong> (needs state for open/close).
+  The Cart content inside it is a <strong>Server Component</strong> passed via <code>children</code>.
+</p>
+
+<%= stream_react_component('CartPage', props: @cart_page_props, prerender: true) %>

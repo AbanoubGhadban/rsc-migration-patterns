@@ -1,0 +1,49 @@
+# Ruby / Rails
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Bundler
+/vendor/bundle
+
+# Node
+/node_modules/
+package-lock.json
+
+# Webpack / Shakapacker build output
+/public/packs/
+/public/packs-test/
+/ssr-generated/
+/.node-renderer-bundles/
+
+# Generated files (auto_load_bundle / shakapacker-precompile-hook)
+/app/javascript/generated/
+/app/javascript/packs/generated/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Bootsnap cache
+/tmp/cache/bootsnap/
+
+# Master key
+/config/master.key
+/config/credentials/*.key

@@ -22,6 +22,11 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+gem "connection_pool", "~> 2.5"
+
+gem "react_on_rails", path: "/mnt/ssd/react_on_rails-2459-rsc-migration/react_on_rails"
+gem "react_on_rails_pro", path: "/mnt/ssd/react_on_rails-2459-rsc-migration/react_on_rails_pro"
+gem "shakapacker", "~> 9.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

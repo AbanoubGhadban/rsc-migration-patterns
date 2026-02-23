@@ -1,0 +1,7 @@
+<h1>Pattern 5: Server-to-Client Promise Handoff</h1>
+<p>
+  The blog post is <strong>awaited on the server</strong> (renders immediately).
+  The comments promise is started on the server but resolved on the client via <code>use()</code>.
+</p>
+
+<%= stream_react_component('BlogPost', props: @blog_post_props, prerender: true) %>

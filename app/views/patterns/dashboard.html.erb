@@ -1,0 +1,7 @@
+<h1>Pattern 4: Async Server Components with Suspense</h1>
+<p>
+  Each dashboard section is an independent <strong>async Server Component</strong> wrapped in
+  <code>&lt;Suspense&gt;</code>. They stream progressively as their data fetches complete.
+</p>
+
+<%= stream_react_component('Dashboard', props: @dashboard_props, prerender: true) %>
