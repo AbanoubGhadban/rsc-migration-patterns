@@ -1,0 +1,7 @@
+<h1>Pattern 1: Pushing State to Leaf Components</h1>
+<p>
+  The ProductPage is a <strong>Server Component</strong> that fetches product data on the server.
+  Only the AddToCartButton is a Client Component — it's the only part that ships JavaScript.
+</p>
+
+<%= stream_react_component('ProductPage', props: @product_page_props, prerender: true) %>

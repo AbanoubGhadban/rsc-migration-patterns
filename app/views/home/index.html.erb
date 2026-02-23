@@ -1,0 +1,81 @@
+<div style="font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 32px 16px;">
+  <h1>RSC Migration Patterns</h1>
+  <p style="color: #555; font-size: 1.1em; margin-bottom: 32px;">
+    Interactive demos of the 5 component tree restructuring patterns from the
+    <strong>React on Rails Pro</strong> RSC migration guide. Each pattern shows a different
+    technique for splitting components into Server and Client parts.
+  </p>
+
+  <div style="display: grid; gap: 16px;">
+    <a href="/patterns/product_page" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; background: #fff;">
+        <h2 style="margin: 0 0 8px; color: #2e7d32;">Pattern 1: Pushing State to Leaf Components</h2>
+        <p style="margin: 0; color: #555;">
+          The most common pattern. A Server Component fetches product data, while only the
+          interactive "Add to Cart" button is a Client Component. Everything else stays on the server.
+        </p>
+        <span style="display: inline-block; margin-top: 8px; font-size: 0.85em; color: #999;">
+          Server: ProductPage, ProductSpecs, ReviewList &middot; Client: AddToCartButton
+        </span>
+      </div>
+    </a>
+
+    <a href="/patterns/cart_page" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; background: #fff;">
+        <h2 style="margin: 0 0 8px; color: #1565c0;">Pattern 2: The Donut Pattern (Children as Props)</h2>
+        <p style="margin: 0; color: #555;">
+          A Client Component (Modal) wraps Server Component content (Cart) via <code>children</code>.
+          The server-rendered cart passes through the modal without becoming client code.
+        </p>
+        <span style="display: inline-block; margin-top: 8px; font-size: 0.85em; color: #999;">
+          Server: CartPage, Cart &middot; Client: Modal
+        </span>
+      </div>
+    </a>
+
+    <a href="/patterns/theme_page" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; background: #fff;">
+        <h2 style="margin: 0 0 8px; color: #6a1b9a;">Pattern 3: Extracting State into a Wrapper</h2>
+        <p style="margin: 0; color: #555;">
+          Theme state is isolated in a Client Component wrapper (ColorProvider), while Header,
+          MainContent, and Footer remain Server Components passed as children.
+        </p>
+        <span style="display: inline-block; margin-top: 8px; font-size: 0.85em; color: #999;">
+          Server: ThemePage, Header, MainContent, Footer &middot; Client: ColorProvider
+        </span>
+      </div>
+    </a>
+
+    <a href="/patterns/dashboard" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; background: #fff;">
+        <h2 style="margin: 0 0 8px; color: #e65100;">Pattern 4: Async Server Components with Suspense</h2>
+        <p style="margin: 0; color: #555;">
+          Three async Server Components (Stats, RevenueChart, RecentOrders) each wrapped in
+          <code>&lt;Suspense&gt;</code> boundaries for independent streaming. No client JS at all.
+        </p>
+        <span style="display: inline-block; margin-top: 8px; font-size: 0.85em; color: #999;">
+          Server: Dashboard, Stats, RevenueChart, RecentOrders &middot; Client: none
+        </span>
+      </div>
+    </a>
+
+    <a href="/patterns/blog_post" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; background: #fff;">
+        <h2 style="margin: 0 0 8px; color: #c62828;">Pattern 5: Server-to-Client Promise Handoff</h2>
+        <p style="margin: 0; color: #555;">
+          The server awaits critical data (blog post) but passes a pending promise (comments) to a
+          Client Component that resolves it with <code>use()</code>. The post renders immediately.
+        </p>
+        <span style="display: inline-block; margin-top: 8px; font-size: 0.85em; color: #999;">
+          Server: BlogPost &middot; Client: Comments
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <hr style="margin: 32px 0; border: none; border-top: 1px solid #e0e0e0;">
+
+  <a href="/hello_server" style="color: #1976d2;">
+    Hello Server (generator default demo)
+  </a>
+</div>

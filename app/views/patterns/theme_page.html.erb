@@ -1,0 +1,7 @@
+<h1>Pattern 3: Extracting State into a Wrapper</h1>
+<p>
+  The ColorProvider holds theme state (Client Component).
+  Header, MainContent, and Footer are <strong>Server Components</strong> passed as children.
+</p>
+
+<%= stream_react_component('ThemePage', props: @theme_page_props, prerender: true) %>
