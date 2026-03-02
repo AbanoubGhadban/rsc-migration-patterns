@@ -39,4 +39,9 @@ class PatternsController < ApplicationController
     @blog_post_props = { postId: 1 }
     stream_view_containing_react_components(template: "patterns/blog_post")
   end
+
+  # Issue #2502 Test: memo and forwardRef in Server Components
+  def memo_forward_ref
+    stream_view_containing_react_components(template: "patterns/memo_forward_ref")
+  end
 end

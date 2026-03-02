@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'patterns/theme_page', to: 'patterns#theme_page'       # Pattern 3
   get 'patterns/dashboard', to: 'patterns#dashboard'         # Pattern 4
   get 'patterns/blog_post', to: 'patterns#blog_post'         # Pattern 5
+  get 'patterns/memo_forward_ref', to: 'patterns#memo_forward_ref'  # Issue #2502 test
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
