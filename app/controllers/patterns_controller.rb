@@ -44,4 +44,19 @@ class PatternsController < ApplicationController
   def memo_forward_ref
     stream_view_containing_react_components(template: "patterns/memo_forward_ref")
   end
+
+  # Ref tests: what works
+  def ref_working
+    stream_view_containing_react_components(template: "patterns/ref_working")
+  end
+
+  # Ref tests: passing ref to Server Component (should crash)
+  def ref_crash
+    stream_view_containing_react_components(template: "patterns/ref_crash")
+  end
+
+  # Ref tests: passing ref from Server to Client Component (should crash)
+  def ref_to_client_crash
+    stream_view_containing_react_components(template: "patterns/ref_to_client_crash")
+  end
 end
