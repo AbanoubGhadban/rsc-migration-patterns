@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'patterns/dashboard', to: 'patterns#dashboard'         # Pattern 4
   get 'patterns/blog_post', to: 'patterns#blog_post'         # Pattern 5
   get 'patterns/memo_forward_ref', to: 'patterns#memo_forward_ref'  # Issue #2502 test
+  get 'patterns/ref_working', to: 'patterns#ref_working'            # Ref: what works
+  get 'patterns/ref_crash', to: 'patterns#ref_crash'                # Ref: crash on SC
+  get 'patterns/ref_to_client_crash', to: 'patterns#ref_to_client_crash'  # Ref: crash on CC
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
